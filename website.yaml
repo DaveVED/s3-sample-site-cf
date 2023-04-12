@@ -1,0 +1,38 @@
+AWSTemplateFormatVersion: "2010-09-09"
+Description: AWS CloudFormation template to create an S3 bucket and configure it as a static website
+
+Parameters:
+  BucketName:
+    Description: Name of the S3 bucket to be created
+    Type: String
+    MinLength: 3
+    MaxLength: 63
+
+Resources:
+  S3Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Ref BucketName
+      AccessControl: PublicRead
+      WebsiteConfiguration:
+        IndexDocument: "index.html"
+        ErrorDocument: "error.html"
+
+  BucketPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket: !Ref S3Bucket
+      PolicyDocument:
+        Version: "2012-10-17"
+        Statement:
+          - Sid: PublicReadGetObject
+            Effect: Allow
+            Principal: "*"
+            Action:
+              - s3:GetObject
+            Resource: !Sub "arn:aws:s3:::${S3Bucket}/*"
+
+Outputs:
+  WebsiteURL:
+    Description: The URL of the static website
+    Value: !Sub "http://${S3Bucket}.s3-website-${AWS::Region}.amazonaws.com"
