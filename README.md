@@ -87,4 +87,4 @@ Get your website url, and check it out in your web browser.
 Getting the website URL...
 Website URL: http://daveved-s3-example.s3-website-us-east-1.amazonaws.com
 ```
-[SOURCE SITE](https://github.com/DaveVED/s3-sample-site-cf/blob/main/images/website.png)
+![SOURCE SITE](https://github.com/DaveVED/s3-sample-site-cf/blob/main/images/website.png)
