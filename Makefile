@@ -4,9 +4,9 @@ endif
 SHELL := /bin/bash
 .DEFAULT_GOAL := help
 
-STACK_NAME ?= daveved-s3-site-example
+STACK_NAME ?= daveved-spa
 TEMPLATE_FILE ?= website.yaml
-S3_BUCKET_NAME ?= daveved-s3-example
+S3_BUCKET_NAME ?= daveved.com
 PROFILE ?= dennis-family
 REGION ?= us-east-1
 

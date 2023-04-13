@@ -18,9 +18,9 @@ To deploy, you can use the `Makefile` attached, following these steps.
 Open up the `Makefile` at the root of your working directory, and update the following variables with your values.
 
 ```
-STACK_NAME ?= :you-cloudformation-stack-name
-TEMPLATE_FILE ?= webstie.yaml
-S3_BUCKET_NAME ?= :your-desired-s3-bucket-name
+STACK_NAME ?= daveved-spa
+TEMPLATE_FILE ?= website.yaml
+S3_BUCKET_NAME ?= daveved.com
 PROFILE ?= :aws-profile
 REGION ?= us-east-1
 ```
